@@ -14,9 +14,6 @@ export const useFetch = ( url ) => {
 
 
     useEffect( () => {
-
-        setState({ data: null, loading: true, error: null });
-
         fetch( url )
             .then( resp => resp.json() )
             .then( data => {
@@ -34,7 +31,7 @@ export const useFetch = ( url ) => {
                 setState({
                     data: null,
                     loading: false,
-                    error: 'No se pudo cargar la info'
+                    error: 'The data could not be loaded'
                 })
             })
 
